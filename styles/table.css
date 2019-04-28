@@ -17,9 +17,3 @@ td:nth-child(1) {
 tr:nth-child(even) {
     background-color: #dddddd;
 }
-
-.center-box {
-    width: 60%;
-    margin-left:auto; 
-    margin-right:auto;
-}

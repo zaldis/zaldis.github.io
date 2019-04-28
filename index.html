@@ -3,7 +3,10 @@
 <head>
     <meta charset="utf-8">
     
+    <link rel="stylesheet" type="text/css" href="styles/base.css">
     <link rel="stylesheet" type="text/css" href="styles/table.css"> 
+    <link rel="stylesheet" type="text/css" href="styles/box.css">
+    <link rel="stylesheet" type="text/css" href="styles/center-box.css">
     
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -15,10 +18,14 @@
 </head>
 <body>
     <h1>Denys Zaluzhnyi's website</h1>
+    
+    <div class="center-box">
+        <img  src="images/profile.jpg" alt="profile">
+    </div>
 
     <div>
         <div>
-            <div class="center-box">
+            <div class="box center-box">
                 <h2>Bio</h2>
                 <table>
                     <tr>
@@ -36,7 +43,7 @@
                 </table>
             </div>
             
-            <div class="center-box">
+            <div class="box center-box">
                 <h2>Hard skills</h2>
                 <table>
                     <tr>
@@ -54,15 +61,33 @@
                 </table>
             </div>
             
-            <div class="center-box">
+            <div class="box center-box">
                 <h2>Soft skills</h2>
-                <table>
-                    <tr>
-                        <td>psychology of extreme relations</td>
-                    </tr>
-                </table>
+                <ul>
+                    <li>psychology of extreme relations</li>
+                </ul>
+            </div>
+            
+            <div class="box center-box">
+                <h2>Projects</h2>
+                <ul>
+                    <li>healthbook</li>
+                </ul>
+            </div>
+            
+            <div class="box center-box">
+                <h2>Job</h2>
+                <ul>
+                    <li>-</li>
+                </ul>
             </div>
         </div>
     </div>
+    
+    <footer class="page-footer font-small fixed-bottom">
+        <div class="footer-copyright text-center py-3">&copy; 2019 Copyright:
+            <a href="https://web.telegram.org/#/im?p=@DEN_ik">Denys Zaluzhnyi</a>
+        </div>
+    </footer>
 </body>
 </html>

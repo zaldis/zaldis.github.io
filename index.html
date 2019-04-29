@@ -2,8 +2,14 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <meta name="description" content="Official Denys Zaluzhnyi's web page">
+    <meta name="keywords" content="Denys, Zaluzhnyi, Denys Zaluzhnyi, Денис, Залужный, Денис Залужный">
+    <meta name="author" content="Denys Zaluzhnyi">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="styles/base.css">
+    <link rel="stylesheet" type="text/css" href="styles/page-title.css">
+    <link rel="stylesheet" type="text/css" href="styles/logo-board.css">
     <link rel="stylesheet" type="text/css" href="styles/table.css"> 
     <link rel="stylesheet" type="text/css" href="styles/box.css">
     <link rel="stylesheet" type="text/css" href="styles/center-box.css">
@@ -14,13 +20,21 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
     <title>Home page</title>
 </head>
 <body>
-    <h1>Denys Zaluzhnyi's website</h1>
+    <header id="page-title">  
+        <h1 class="d-flex align-items-center" style="display: inline">
+            <canvas id="logo-board"></canvas>
+            Denys Zaluzhnyi's website
+        </h1>
+    </header>
     
     <div class="center-box">
-        <img  src="images/profile.jpg" alt="profile">
+        <img src="images/profile.jpg" alt="profile">
     </div>
 
     <div>
@@ -89,5 +103,8 @@
             <a href="https://web.telegram.org/#/im?p=@DEN_ik">Denys Zaluzhnyi</a>
         </div>
     </footer>
+    
+    <script src="scripts/point.js"></script>
+    <script src="scripts/logo.js"></script>
 </body>
 </html>

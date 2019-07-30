@@ -1,4 +1,8 @@
 #page-title {
-    background-color: #8a176c63;
+    background-color: black;
+    color: #ab920d;
+    font-family: 'Aldrich';
     margin-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 5px;
 }

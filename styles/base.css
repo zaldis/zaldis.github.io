@@ -1,5 +1,6 @@
 body {
     background-color: #f1f1f1 !important;
+    font-family: 'Bai Jamjuree' !important;
 }
 
 main {
@@ -8,6 +9,11 @@ main {
 
 abbr {
     font-style: italic;
+}
+
+h2 {
+    font-family: 'Bai Jamjuree';
+    font-weight: bold;
 }
 
 img.profile {

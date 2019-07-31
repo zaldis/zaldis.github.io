@@ -10,4 +10,8 @@
     #header-text {
         display: none;
     }
+
+    img.logo {
+        margin: auto;
+    }
 }

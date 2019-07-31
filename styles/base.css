@@ -19,6 +19,10 @@ img.profile {
     border: 3px solid silver;
 }
 
+img.profile:hover {
+    border: 4px solid #ab920d;
+}
+
 img.logo {
     margin: 10px;
     margin-left: 20px;

@@ -1,5 +1,11 @@
 .center-box {
     width: 60%;
-    margin-left:auto; 
+    margin-left:auto;
     margin-right:auto;
+}
+
+@media screen and (max-width: 600px) {
+    .center-box {
+        width: 100%;
+    }
 }

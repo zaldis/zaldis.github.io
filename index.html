@@ -32,122 +32,90 @@
 </head>
 <body>
     <header id="page-title">
-        <h1 class="d-flex align-items-center" style="display: inline">
+        <h1 class="d-flex align-items-center" style="margin-bottom: 0">
             <img src="images/logo.png" class="logo" alt="logo"></img>
             <span id="header-text">Denys Zaluzhnyi's homepage</span>
         </h1>
     </header>
 
-    <main class="container">
-        <a href="https://web.telegram.org/#/im?p=@DEN_ik">
-            <div class="center-box">
-                <img class="profile" src="images/profile.jpg" alt="profile" width="300"
-                        height="300">
-            </div>
-        </a>
-
-        <div class="container">
-            <div class="row">
-                <div class="col"></div>
-                <div class="col">
-                    <div class="contacts">
-                        <ul class="list-group list-group-horizontal-md">
-                            <a href="https://web.telegram.org/#/im?p=@DEN_ik">
-                                <li class="list-group-item">
-                                    Telegram
-                                </li>
-                            </a>
-                            <a href="https://github.com/DarkDream99/">
-                                <li class="list-group-item">
-                                    GitHub
-                                </li>
-                            </a>
-                            <a href="https://ua.linkedin.com/in/denys-zaluzhnyi-b22306172">
-                                <li class="list-group-item">
-                                    LinkedIn
-                                </li>
-                            </a>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col"></div>
+    <main style="display: flex">
+        <div class='profile-info'>
+            <img class="profile" src="images/profile.jpg" alt="profile" width="200" height="200" />
+            <br />
+            <a href='./files/DenysZaluzhnyiCV.pdf'>Resume</a> &compfn;
+            <a href='https://linkedin.com/in/denys-zaluzhnyi-b22306172'>LinkedIn</a> &compfn;
+            <a href='mailto:denys.zaluzhnyi@gmail.com'>Email</a>
+            <div>
+                Kharkiv, Ukraine
             </div>
         </div>
 
-        <div>
+        <div style="width: 100%">
             <div>
-                <div class="box center-box">
+                <div class="box">
                     <h2>Bio</h2>
-                    <table>
-                        <tr>
-                            <td>Years</td>
-                            <td>19</td>
-                        </tr>
-                        <tr>
-                            <td>University</td>
-                            <td>Kharkiv University of Radio Electronics</td>
-                        </tr>
-                        <tr>
-                            <td>City</td>
-                            <td>Kharkiv</td>
-                        </tr>
-                    </table>
+                    <div>
+                        I am an enthusiast who is constantly looking for something new, something interesting, which I later turn into useful things. <br />
+                        I'm software engineer (with yoga inside my heart &#128526;)
+                    </div>
                 </div>
 
-                <div class="box center-box">
-                    <h2>Hard skills</h2>
-                    <table>
-                        <tr>
-                            <td>Base knowledge of <abbr title="programming language">PLs</abbr></td>
-                            <td>C/C++, C#, Java, JS</td>
-                        </tr>
-                        <tr>
-                            <td>Advanced knowledge of <abbr title="programming language">PLs</abbr></td>
-                            <td>Python (2,3)</td>
-                        </tr>
-                        <tr>
-                            <td>Knowledge of <abbr title="Data base">DBs</abbr></td>
-                            <td>MySQL, SQLite</td>
-                        </tr>
-                        <tr>
-                            <td>Version control systems</td>
-                            <td>Git</td>
-                        </tr>
-                        <tr>
-                            <td>Architectures</td>
-                            <td>3-tier(MVC), 4-tier</td>
-                        </tr>
-                    </table>
-                </div>
-
-                <div class="box center-box">
-                    <h2>Knowledge of Python frameworks/libs</h2>
-                    <ul>
-                        <li>Django, Django-Rest</li>
-                        <li>Pandas, NumPy, MatPlotLib, Seaborn</li>
-                        <li>Scikit-learn</li>
-                    </ul>
-                </div>
-
-                <div class="box center-box">
-                    <h2>Soft skills</h2>
-                    <ul>
-                        <li>psychology of extreme relations</li>
-                    </ul>
-                </div>
-
-                <div class="box center-box">
+                <div class="box">
                     <h2>Projects</h2>
-                    <ul>
-                        <li><a href="https://github.com/DarkDream99/healthbook">healthbook</a></li>
-                    </ul>
+                    <div class="info-item">
+                        <h3>
+                            <a href="https://github.com/DarkDream99/AlgoBridge-web">AlgoBridge</a>
+                        </h3>
+                        <div>
+                            Algorithm design system. Provide user the ability to design algorithm via configured pseudocode.
+                            The pseudocode can be executed and visualized (with specific settings from user).
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <h3>
+                            <a href="https://github.com/DarkDream99/WorkConcentrator">Work Concentrator</a>
+                        </h3>
+                       <div>
+                            Simple realization of Pomodoro technique (base on finite machine)
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <h3>
+                            <a href="https://github.com/DarkDream99/Delone">Visualisation of Delaunay's triangulation</a>
+                        </h3>
+                        <div>
+                            Visualisation of Delaunay's algorithm to better understand base behaviour. User can set points of a polygon and then sight the process of triangulation
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <h3>
+                            <a href="https://github.com/DarkDream99/darkzip">Archiver</a>
+                        </h3>
+                        <div>
+                            Archiver that very similar to 7z
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <h3>
+                            <a href="https://github.com/DarkDream99/Algo">Algorithms & Data structures</a>
+                        </h3>
+                        <div>
+                            Implementation algorithms and data structures in Python/C++. Also contains solutions with these algorithms.
+                        </div>
+                    </div>
                 </div>
 
-                <div class="box center-box">
-                    <h2>Job</h2>
-                    <ul>
-                        <li>-</li>
-                    </ul>
+                <div class="box">
+                    <h2>Achievements</h2>
+                    <h3>
+                        Kharkiv National University of Radioelectronics
+                    </h3>
+                    <div>
+                        <ul>
+                            <li>Bachelor's Degree (2016 - 2020)</li>
+                            <li>Master's Degree (2020 - 2022)</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -155,11 +123,12 @@
 
 
     <footer class="page-footer font-small">
-        <div class="footer-copyright text-center py-3">&copy; 2019 Copyright:
-            <a href="https://web.telegram.org/#/im?p=@DEN_ik">Denys Zaluzhnyi</a>
+        <div class="footer-copyright text-center py-3">&copy; 2020 Copyright:
+            <a href="https://linkedin.com/in/denys-zaluzhnyi-b22306172">Denys Zaluzhnyi</a>
         </div>
     </footer>
 
     <script src="scripts/point.js"></script>
 </body>
 </html>
+

@@ -11,7 +11,6 @@
     <link href='https://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Bai Jamjuree' rel='stylesheet'>
 
-
     <link rel="stylesheet" type="text/css" href="styles/base.css">
     <link rel="stylesheet" type="text/css" href="styles/page-title.css">
     <link rel="stylesheet" type="text/css" href="styles/logo-board.css">
@@ -19,102 +18,160 @@
     <link rel="stylesheet" type="text/css" href="styles/box.css">
     <link rel="stylesheet" type="text/css" href="styles/center-box.css">
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-    <!-- JQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
     <title>Home page</title>
 </head>
 <body>
     <header id="page-title">
-        <h1 class="d-flex align-items-center" style="margin-bottom: 0">
+        <h1 style="display: flex; flex-flow: wrap; align-items: center;">
             <img src="images/logo.png" class="logo" alt="logo"></img>
-            <span id="header-text">Denys Zaluzhnyi's homepage</span>
+            <div id="header-text">Zaldis homepage</div>
         </h1>
     </header>
 
-    <main style="display: flex">
-        <div class='profile-info'>
-            <img class="profile" src="images/profile.jpg" alt="profile" width="200" height="200" />
-            <br />
-            <a href='./files/DenysZaluzhnyiCV.pdf'>Resume</a> &compfn;
-            <a href='https://linkedin.com/in/denys-zaluzhnyi-b22306172'>LinkedIn</a> &compfn;
-            <a href='mailto:denys.zaluzhnyi@gmail.com'>Email</a>
-            <div>
-                Kharkiv, Ukraine
+    <main>
+        <a href="https://www.linkedin.com/in/denys-zaluzhnyi-b22306172/">
+            <div class="center-box">
+                <img class="profile" src="images/profile.jpg" alt="profile" width="200" height="200">
             </div>
+        </a>
+
+        <div class="contacts" style="display: flex;">
+            <a style="flex-grow: 1;" href="https://web.telegram.org/#/im?p=@zaldis99">Telegram</a>
+            <a style="flex-grow: 1;" href="https://github.com/zaldis">GitHub</a>
+            <a style="flex-grow: 1;" href="https://ua.linkedin.com/in/denys-zaluzhnyi-b22306172">LinkedIn</a>
         </div>
 
         <div style="width: 100%">
             <div>
-                <div class="box">
+                <div class="box center-box">
+                    <p>
+                        I'm a software engineer enthusiast who is constantly looking for something new, something interesting, which I later turn into useful things.
+                    </p>
+                    <p>
+                        Yoga is inside my heart 😎
+                    </p>
                     <h2>Bio</h2>
-                    <div>
-                        I am an enthusiast who is constantly looking for something new, something interesting, which I later turn into useful things. <br />
-                        I'm software engineer (with yoga inside my heart &#128526;)
-                    </div>
+                    <table>
+                        <tr>
+                            <td>My age</td>
+                            <td>24 y.o.</td>
+                        </tr>
+                        <tr>
+                            <td>Education</td>
+                            <td>
+                                <div><b>Masters in Computer Science</b></div>
+                                <div>Kharkiv University of Radio Electronics</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Experience in Software Engineering</td>
+                            <td>5 years</td>
+                        </tr>
+                        <tr>
+                            <td>City</td>
+                            <td>Warsaw, Poland</td>
+                        </tr>
+                    </table>
                 </div>
 
-                <div class="box">
-                    <h2>Projects</h2>
-                    <div class="info-item">
-                        <h3>
-                            <a href="https://github.com/DarkDream99/AlgoBridge-web">AlgoBridge</a>
-                        </h3>
-                        <div>
-                            Algorithm design system. Provide user the ability to design algorithm via configured pseudocode.
-                            The pseudocode can be executed and visualized (with specific settings from user).
+                <div class="box center-box">
+                    <h2>Work experience</h2>
+                    <a id="resume-link" href="./files/resume.pdf">
+                        <div class="resume-button">
+                            Download resume (PDF)
+                        </div>
+                    </a>
+                    <div class="job-section">
+                        <div class="job-item">
+                            <div class="job-head" style="display: flex; justify-content: space-between;">
+                                <div>
+                                    <span>Grid Dynamics</span>
+                                    <p><i>Senior Software Engineer</i></p>
+                                </div>
+                                <div>
+                                    March 2023 - Present
+                                    <p>Warsaw, Poland</p>
+                                </div>
+                            </div>
+                            <div class="job-body">
+                                <p>
+                                    Rewriting healthcare application from monolithic architecture with synchronous requests to microservice architecture with asynchronous requests.
+                                </p>
+                                <ul>
+                                    <li>Writing code for microservices architecture: <b>Python (FastAPI)</b>, <b>Typescript (NestJS)</b></li> 
+                                    <li>Checking code coverage with tests: <b>Pytest + GitHub actions</b></li>
+                                    <li>Improving SQL queries: <b>PostgreSQL + SQLAlchemy</b></li>
+                                    <li>Writing cron jobs based on <b>Kubernetes (AWS EKS)</b></li>
+                                    <li>Conducting demos and code reviews</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    <div class="info-item">
-                        <h3>
-                            <a href="https://github.com/DarkDream99/WorkConcentrator">Work Concentrator</a>
-                        </h3>
-                       <div>
-                            Simple realization of Pomodoro technique (base on finite machine)
+
+                    <div class="job-section">
+                        <div class="job-item">
+                            <div class="job-head" style="display: flex; justify-content: space-between;">
+                                <div>
+                                    <span>Grid Dynamics</span>
+                                    <p><i>Software Engineer</i></p>
+                                </div>
+                                <div>
+                                    September 2020 - March 2023
+                                    <p>Lviv, Ukraine</p>
+                                </div>
+                            </div>
+                            <div class="job-body">
+                                <p>
+                                    Application that improves communication between members, coaches and doctors in the healthcare project. It had a lot of work based on integration with another 3d party services.
+                                </p>
+                                <ul>
+                                    <li>Writing code for monolitic architecture: <b>Python (Django)</b></li>
+                                    <li>Writing UI part for browsers: <b>JavaScript (React)</b></li> 
+                                    <li>Checking code coverage with tests: <b>Pytest + AWS Code Pipeline</b></li> 
+                                    <li>Improving SQL queries with Django ORM </li>
+                                    <li>Configuring AWS infrastructure with Pulumi</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    <div class="info-item">
-                        <h3>
-                            <a href="https://github.com/DarkDream99/Delone">Visualisation of Delaunay's triangulation</a>
-                        </h3>
-                        <div>
-                            Visualisation of Delaunay's algorithm to better understand base behaviour. User can set points of a polygon and then sight the process of triangulation
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <h3>
-                            <a href="https://github.com/DarkDream99/darkzip">Archiver</a>
-                        </h3>
-                        <div>
-                            Archiver that very similar to 7z
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <h3>
-                            <a href="https://github.com/DarkDream99/Algo">Algorithms & Data structures</a>
-                        </h3>
-                        <div>
-                            Implementation algorithms and data structures in Python/C++. Also contains solutions with these algorithms.
+
+                    <div class="job-section">
+                        <div class="job-item">
+                            <div class="job-head" style="display: flex; justify-content: space-between;">
+                                <div>
+                                    <span>EnvilEight</span>
+                                    <p><i>Junior Software Engineer</i></p>
+                                </div>
+                                <div>
+                                    September 2018 - September 2020
+                                    <p>Kharkiv, Ukraine</p>
+                                </div>
+                            </div>
+                            <div class="job-body">
+                                <p>
+                                    Software system (aka admin panel) to monitor available resources such as vehicles, planes, hotels and so on. It helps optimize these resources based on seasonal requirements.
+                                </p>
+                                <ul>
+                                    <li>Writing server-side code: <b>Python (Flask/Django)</b></li>
+                                    <li>Writing front end side code: <b>JavaScript (React)</b></li> 
+                                    <li>Configuring <b>GraphQL</b> for API requests</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="box">
-                    <h2>Achievements</h2>
-                    <h3>
-                        Kharkiv National University of Radioelectronics
-                    </h3>
-                    <div>
-                        <ul>
-                            <li>Bachelor's Degree (2016 - 2020)</li>
-                            <li>Master's Degree (2020 - 2022)</li>
-                        </ul>
+                <div class="box center-box">
+                    <h2>Personal projects</h2>
+                    <div class="projects-section">
+                        <div class="project-item">
+                            <div class="project-head" style="display: flex; justify-content: space-between;">
+                                <p>NeoVim text editor config for the python-based tasks</p>
+                                <p><a href="https://github.com/zaldis/NeovimConfig">GitHub</a></p>
+                            </div>
+                            <div class="project-body">
+                                <p>Configuration for the NeoVim text editor that allows using this editor like a Python IDE.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -122,10 +179,8 @@
     </main>
 
 
-    <footer class="page-footer font-small">
-        <div class="footer-copyright text-center py-3">&copy; 2020 Copyright:
-            <a href="https://linkedin.com/in/denys-zaluzhnyi-b22306172">Denys Zaluzhnyi</a>
-        </div>
+    <footer>
+        <div>&copy; 2023 Copyright</div>
     </footer>
 
     <script src="scripts/point.js"></script>

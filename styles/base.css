@@ -1,6 +1,7 @@
 body {
     background-color: #f1f1f1 !important;
     font-family: 'Bai Jamjuree' !important;
+    margin: 0;
 }
 
 main {
@@ -36,32 +37,99 @@ img.logo {
 
 .contacts {
     margin-top: 30px;
+    background-color: #dddddd;
 }
 
 .contacts a {
     color: slateblue;
-}
-
-.contacts a {
     text-decoration: none;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
-.contacts li {
-    font-family: 'Bai Jamjuree';
-    font-size: 1.2em;
-}
-
-.contacts li:hover {
-    background-color: grey;
+.contacts a:hover {
+    background-color: #a09b9b;
     color: white;
+}
+
+
+footer {
+    width: 100%;
+    background-color: #22254a;
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+
+.job-section {
+    margin-bottom: 20px;
+}
+
+.job-section .job-item {
+    background-color: #eaeaea;
+}
+
+.job-section .job-item .job-head {
+    background-color: #dddddd;
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.job-section .job-item .job-body {
+    padding-bottom: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+
+.projects-section {
+    margin-bottom: 20px;
+}
+
+.projects-section .project-item {
+    background-color: #eaeaea;    
+}
+
+.projects-section .project-item .project-head {
+    background-color: #dddddd;
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.projects-section .project-item .project-body {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 10px;
+}
+
+
+.resume-button {
+    /* width: 100%; */
+    border: 1px solid black;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-bottom: 20px;
+}
+
+.resume-button:hover {
+    background-color: #dddddd;
     cursor: pointer;
 }
 
-
-.info-item {
-  margin-top: 15px;
-  padding-bottom: 30px;
-  border-bottom: 1px solid silver;
-  width: 60%;
+#resume-link {
+    text-decoration: none;
+    color: black;
 }
-

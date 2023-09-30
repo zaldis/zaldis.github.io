@@ -19,8 +19,9 @@ h2 {
 
 img.profile {
     display: block;
-    border-radius: 5%;
+    border-radius: 100%;
     border: 1px solid silver;
+    margin-top: 25px;
 }
 
 img.logo {
@@ -114,7 +115,6 @@ footer a {
 
 
 .resume-button {
-    /* width: 100%; */
     border: 1px solid black;
     text-align: center;
     padding-top: 20px;

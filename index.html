@@ -18,22 +18,20 @@
     <link rel="stylesheet" type="text/css" href="styles/box.css">
     <link rel="stylesheet" type="text/css" href="styles/center-box.css">
 
-    <title>Home page</title>
+    <title>Zaldis</title>
 </head>
 <body>
     <header id="page-title">
         <h1 style="display: flex; flex-flow: wrap; align-items: center;">
             <img src="images/logo.png" class="logo" alt="logo"></img>
-            <div id="header-text">Zaldis homepage</div>
+            <div id="header-text">Zaldis</div>
         </h1>
     </header>
 
     <main>
-        <a href="https://www.linkedin.com/in/denys-zaluzhnyi-b22306172/">
-            <div class="center-box" style="display: flex; justify-content: center;">
-                <img class="profile" src="images/profile.jpg" alt="profile" width="200" height="200">
-            </div>
-        </a>
+        <div class="center-box" style="display: flex; justify-content: center;">
+            <img class="profile" src="images/profile.jpg" alt="profile" width="200" height="200">
+        </div>
 
         <div class="contacts" style="display: flex;">
             <a style="flex-grow: 1;" href="https://web.telegram.org/#/im?p=@zaldis99">Telegram</a>
@@ -53,8 +51,8 @@
                     <h2>Bio</h2>
                     <table>
                         <tr>
-                            <td>My age</td>
-                            <td>24 y.o.</td>
+                            <td>Experience in Software Engineering</td>
+                            <td>5 years</td>
                         </tr>
                         <tr>
                             <td>Education</td>
@@ -64,11 +62,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>Experience in Software Engineering</td>
-                            <td>5 years</td>
-                        </tr>
-                        <tr>
-                            <td>City</td>
+                            <td>Current location</td>
                             <td>Warsaw, Poland</td>
                         </tr>
                     </table>
@@ -76,11 +70,27 @@
 
                 <div class="box center-box">
                     <h2>Work experience</h2>
-                    <a id="resume-link" href="./files/resume.pdf">
+                    <a id="resume-link" href="https://drive.google.com/file/d/1iiF11a1yPhgOw4-GURnbBZgc4z8zS4tn/view">
                         <div class="resume-button">
-                            Download resume (PDF)
+                            Download PDF
                         </div>
                     </a>
+                    <div class="job-section">
+                        <div class="job-item">
+                            <div class="job-head" style="display: flex; justify-content: space-between;">
+                                <div>
+                                    <span>Google</span>
+                                    <p><i>Software Engineer</i></p>
+                                </div>
+                                <div>
+                                    October 2024 - Present
+                                    <p>Warsaw, Poland</p>
+                                </div>
+                            </div>
+                            <div class="job-body"> </div>
+                        </div>
+                    </div>
+
                     <div class="job-section">
                         <div class="job-item">
                             <div class="job-head" style="display: flex; justify-content: space-between;">
@@ -89,7 +99,7 @@
                                     <p><i>Senior Software Engineer</i></p>
                                 </div>
                                 <div>
-                                    March 2023 - Present
+                                    March 2023 - October 2024
                                     <p>Warsaw, Poland</p>
                                 </div>
                             </div>
@@ -122,7 +132,8 @@
                             </div>
                             <div class="job-body">
                                 <p>
-                                    Application that improves communication between members, coaches and doctors in the healthcare project. It had a lot of work based on integration with another 3d party services.
+                                    Application that improves communication between members, coaches and doctors in the healthcare project.
+                                    It had a lot of work based on integration with another 3d party services.
                                 </p>
                                 <ul>
                                     <li>Writing code for monolitic architecture: <b>Python (Django)</b></li>
@@ -140,21 +151,24 @@
                             <div class="job-head" style="display: flex; justify-content: space-between;">
                                 <div>
                                     <span>EnvilEight</span>
-                                    <p><i>Junior Software Engineer</i></p>
+                                    <p><i>Junior Full Stack Engineer</i></p>
                                 </div>
                                 <div>
-                                    September 2018 - September 2020
+                                    November 2019 - May 2021
                                     <p>Kharkiv, Ukraine</p>
                                 </div>
                             </div>
                             <div class="job-body">
                                 <p>
-                                    Software system (aka admin panel) to monitor available resources such as vehicles, planes, hotels and so on. It helps optimize these resources based on seasonal requirements.
+                                    Developed a software system to monitor available resources such as vehicles, planes, hotels and so on.
+                                    It helps optimize these resources based on seasonal requirements.
+                                </p>
+                                <p>
+                                    <b><i>Optimized booking overlapping algorithm from 1.5 hours to ~3 minutes.</i></b>
                                 </p>
                                 <ul>
-                                    <li>Writing server-side code: <b>Python (Flask/Django)</b></li>
-                                    <li>Writing front end side code: <b>JavaScript (React)</b></li> 
-                                    <li>Configuring <b>GraphQL</b> for API requests</li>
+                                    <li>Designed monolithic architecture with <b>Flask/Django</b> and <b>React</b></li>
+                                    <li>Configured API endpoints with <b>GraphQL</b></li>
                                 </ul>
                             </div>
                         </div>
@@ -170,6 +184,13 @@
                             </div>
                             <div class="project-body">
                                 <p>Configuration for the NeoVim text editor that allows using this editor like a Python IDE.</p>
+                                <ul>
+                                    <li>Bash script to setup this config</li>
+                                    <li>LSP configuration</li>
+                                    <li>Debugger configuration</li>
+                                    <li>Search engine (for a content, files and folders)</li>
+                                    <li>All configurations are based on Lua</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -180,7 +201,7 @@
 
 
     <footer>
-        <div>&copy; 2023 Copyright</div>
+        <div>&copy; 2025 Copyright</div>
     </footer>
 </body>
 </html>

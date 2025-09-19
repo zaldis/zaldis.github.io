@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZaldisCode | Array, List</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        .data-box {
+            background-color: #94D2BD;
+            color: #005F73;
+            border: 2px solid #0A9396;
+        }
+        .pointer {
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 15px solid #EE9B00;
+        }
+        .node {
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            border: 2px solid #0A9396;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .node-data {
+            padding: 1rem;
+            border-right: 2px solid #0A9396;
+            background-color: #E9D8A6;
+            color: #CA6702;
+        }
+        .node-ptr {
+            padding: 1rem;
+            background-color: #94D2BD;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            height: 50vh;
+            max-height: 500px;
+        }
+        .decision-node {
+            border: 2px solid #0A9396;
+            background-color: #E9D8A6;
+            color: #CA6702;
+        }
+        .decision-path {
+            position: relative;
+            padding-left: 2rem;
+            border-left: 2px dashed #0A9396;
+        }
+        .decision-path::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 14px;
+            height: 14px;
+            border-radius: 9999px;
+            background-color: #EE9B00;
+            border: 2px solid white;
+        }
+        .kpi-card {
+             background: linear-gradient(135deg, #005F73, #0A9396);
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <header class="bg-white shadow-md sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <h1 class="text-3xl font-bold text-center text-[#005F73]">Understanding Core Data Structures</h1>
+            <p class="text-center text-lg text-gray-600 mt-1">Arrays / ArrayLists / Linked Lists</p>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
+
+        <section id="intro" class="mb-12">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-2xl font-bold text-[#0A9396] mb-4">What Are Data Structures?</h2>
+                <p class="text-lg">
+                    In computer science, a data structure is a way of organizing and storing data
+                    so that it can be accessed and modified efficiently. Think of it like organizing a library.
+                    You wouldn't just throw books in a pile; you'd arrange them on shelves by genre or author
+                    to find them easily. Similarly, choosing the right data structure for your program 
+                    is crucial for performance.
+                </p>
+            </div>
+        </section>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-1">
+                 <div class="bg-white rounded-lg shadow-lg p-6 h-full">
+                    <h3 class="text-2xl font-bold text-[#CA6702] mb-4 text-center">Array</h3>
+                    <p class="mb-4">
+                        An array is the simplest data structure.
+                        It's a collection of items stored in a <b>contiguous block of memory</b>.
+                        Its <b>size is fixed</b> when it's created, meaning it cannot grow or shrink.
+                    </p>
+                    <p class="mb-4 font-semibold">Key: Fixed Size & Direct Access</p>
+                    
+                    <div class="my-6">
+                        <p class="text-center font-semibold mb-2">Memory Representation</p>
+                        <div class="flex justify-center space-x-1">
+                            <div class="text-center">
+                                <div class="w-16 h-16 flex items-center justify-center data-box font-bold text-xl rounded">10</div>
+                                <span class="text-sm font-mono">Index 0</span>
+                            </div>
+                            <div class="text-center">
+                                <div class="w-16 h-16 flex items-center justify-center data-box font-bold text-xl rounded">20</div>
+                                <span class="text-sm font-mono">Index 1</span>
+                            </div>
+                            <div class="text-center">
+                                <div class="w-16 h-16 flex items-center justify-center data-box font-bold text-xl rounded">30</div>
+                                <span class="text-sm font-mono">Index 2</span>
+                            </div>
+                             <div class="text-center">
+                                <div class="w-16 h-16 flex items-center justify-center data-box font-bold text-xl rounded">40</div>
+                                <span class="text-sm font-mono">Index 3</span>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="text-lg font-semibold text-[#005F73] mt-6 mb-2">Fast Access O(1)</h4>
+                    <p class="text-sm">
+                        Accessing an element is incredibly fast because the computer can calculate its exact memory address 
+                        with a simple formula:
+                        <code class="bg-gray-200 text-sm rounded p-1 font-mono">address = base_address + (index * item_size)</code>.
+                        Since this is a single calculation, it takes constant time, regardless of the array's size.
+                    </p>
+
+                    <h4 class="text-lg font-semibold text-[#005F73] mt-4 mb-2">Zero-Based Indexing?</h4>
+                    <p class="text-sm mb-4">
+                        The <i>index</i> is actually an <i>offset</i> — how many "steps" to take from the starting address.
+                        The first element is at the base address itself, requiring 0 steps.
+                    </p>
+                    <h4 class="text-lg font-semibold text-[#005F73] mt-4 mb-2">Usage Example</h4>
+                    <p class="text-sm">
+                        Storing a known number of items, like the days of the week or monthly sales figures for a year. 
+                        Performance is critical, and the size won't change.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="lg:col-span-1">
+                 <div class="bg-white rounded-lg shadow-lg p-6 h-full">
+                    <h3 class="text-2xl font-bold text-[#CA6702] mb-4 text-center">ArrayList</h3>
+                    <p class="mb-4">
+                        An ArrayList (or dynamic array) is built on top of an array but with a key difference:
+                        it can <b>grow automatically</b>. Under the hood, it's just an array.
+                    </p>
+                    <p class="mb-4 font-semibold">Key: Flexible Size</p>
+
+                    <div class="my-6">
+                        <p class="text-center font-semibold mb-2">How It Resizes</p>
+                         <div class="space-y-4">
+                            <p class="text-sm text-center">1. When the internal array is full...</p>
+                            <div class="flex justify-center space-x-1">
+                                <div class="w-12 h-12 flex items-center justify-center data-box font-bold rounded">10</div>
+                                <div class="w-12 h-12 flex items-center justify-center data-box font-bold rounded">20</div>
+                                <div class="w-12 h-12 flex items-center justify-center data-box font-bold rounded">30</div>
+                            </div>
+                            <p class="text-sm text-center">2. A new, larger array is created:</p>
+                            <div class="flex justify-center space-x-1">
+                                <div class="w-12 h-12 flex items-center justify-center bg-gray-200 border-2 border-dashed border-gray-400 rounded"></div>
+                                <div class="w-12 h-12 flex items-center justify-center bg-gray-200 border-2 border-dashed border-gray-400 rounded"></div>
+                                <div class="w-12 h-12 flex items-center justify-center bg-gray-200 border-2 border-dashed border-gray-400 rounded"></div>
+                                <div class="w-12 h-12 flex items-center justify-center bg-gray-200 border-2 border-dashed border-gray-400 rounded"></div>
+                                <div class="w-12 h-12 flex items-center justify-center bg-gray-200 border-2 border-dashed border-gray-400 rounded"></div>
+                                <div class="w-12 h-12 flex items-center justify-center bg-gray-200 border-2 border-dashed border-gray-400 rounded"></div>
+                            </div>
+                            <p class="text-sm text-center">3. Old elements are copied:</p>
+                            <div class="flex justify-center space-x-1">
+                                <div class="w-12 h-12 flex items-center justify-center data-box font-bold rounded">10</div>
+                                <div class="w-12 h-12 flex items-center justify-center data-box font-bold rounded">20</div>
+                                <div class="w-12 h-12 flex items-center justify-center data-box font-bold rounded">30</div>
+                                <div class="w-12 h-12 flex items-center justify-center bg-gray-200 border-2 border-dashed border-gray-400 rounded"></div>
+                                <div class="w-12 h-12 flex items-center justify-center bg-gray-200 border-2 border-dashed border-gray-400 rounded"></div>
+                                <div class="w-12 h-12 flex items-center justify-center bg-gray-200 border-2 border-dashed border-gray-400 rounded"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-sm mt-4">
+                        This resizing operation is expensive <code>O(n)</code> because it involves creating a new array and copying all existing elements. 
+                        However, since it doesn't happen on every insertion, the <b>amortized cost</b> of adding an element is still very low.
+                    </p>
+                     
+                    <h4 class="text-lg font-semibold text-[#005F73] mt-6 mb-2">Usage Example</h4>
+                    <p class="text-sm">
+                        Use when you need the benefits of fast array access but don't know the final size of your collection, like adding items to a user's shopping cart.
+                    </p>
+                </div>
+            </div>
+
+            <div class="lg:col-span-1">
+                 <div class="bg-white rounded-lg shadow-lg p-6 h-full">
+                    <h3 class="text-2xl font-bold text-[#CA6702] mb-4 text-center">Linked List</h3>
+                    <p class="mb-4">
+                        A Linked List stores items in individual objects called <b>nodes</b>. 
+                        Each node contains the data and a <b>pointer to the next node</b> in the sequence. 
+                        The data can be stored anywhere in memory.
+                    </p>
+                    <p class="mb-4 font-semibold">Key: Efficient Insertions/Deletions</p>
+                    <div class="my-6 space-y-4">
+                        <p class="text-center font-semibold mb-2">Node Representation</p>
+                        <div class="flex items-center justify-center space-x-2">
+                             <div class="node">
+                                <div class="node-data font-bold">10</div>
+                                <div class="node-ptr"><div class="pointer"></div></div>
+                            </div>
+                            <div class="node">
+                                <div class="node-data font-bold">20</div>
+                                <div class="node-ptr"><div class="pointer"></div></div>
+                            </div>
+                             <div class="node">
+                                <div class="node-data font-bold">30</div>
+                                <div class="node-ptr text-gray-400 font-mono text-sm">null</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4 class="text-lg font-semibold text-[#005F73] mt-6 mb-2">Slow Access O(n)</h4>
+                    <p class="text-sm mb-4">
+                        To find the 50th element, you must start at the head (the first node) and follow the pointers 49 times.
+                        There is no way to calculate the address directly. This makes random access slow.
+                    </p>
+
+                    <h4 class="text-lg font-semibold text-[#005F73] mt-4 mb-2">Fast Insertions/Deletions O(1)</h4>
+                    <p class="text-sm mb-4">
+                        Once you know where to insert or delete, the operation is fast.
+                        You just need to update a couple of pointers to add or remove a node.
+                        You don't have to shift other elements like in an array.
+                    </p>
+                    <h4 class="text-lg font-semibold text-[#005F73] mt-4 mb-2">Usage Example</h4>
+                    <p class="text-sm">
+                        Perfect for applications where you frequently add or remove items from the middle of a list,
+                        like a music playlist or an "undo" history in an editor.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <section id="complexity" class="mt-12">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-3xl font-bold text-center text-[#005F73] mb-2">Time Complexity Showdown</h2>
+                <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">
+                    Time complexity measures how the runtime of an operation grows as the input size N (size of input data) increases.
+                    Lower is better. Here's how our data structures compare on common operations.
+                </p>
+                <div class="chart-container mx-auto">
+                    <canvas id="complexityChart"></canvas>
+                </div>
+            </div>
+        </section>
+        
+        <section id="decision-guide" class="mt-12">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-3xl font-bold text-center text-[#005F73] mb-8">Which Data Structure Should I Use?</h2>
+                <div class="max-w-4xl mx-auto space-y-6">
+                    <div>
+                        <div class="decision-node p-4 rounded-lg text-center shadow">
+                            <h4 class="font-bold text-lg">What is your primary need?</h4>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        
+                        <div class="decision-path mt-6">
+                            <div class="mb-4">
+                                <p class="font-semibold text-[#005F73] p-3 bg-blue-50 rounded-md">
+                                    I need the FASTEST possible access to elements, and the data size is fixed.
+                                </p>
+                            </div>
+                            <div class="kpi-card text-white p-6 rounded-lg shadow-xl text-center">
+                                <span class="text-5xl font-bold">→</span>
+                                <h3 class="text-2xl font-bold mt-2">Use an Array</h3>
+                                <p class="mt-2 text-blue-100">
+                                    Best for performance-critical tasks with predictable data sizes, like game development or scientific computing.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="decision-path mt-6">
+                            <div class="mb-4">
+                                <p class="font-semibold text-[#005F73] p-3 bg-blue-50 rounded-md">
+                                    I need flexibility. The data size will change, and I mostly add/remove at the end.
+                                </p>
+                            </div>
+                            <div class="kpi-card text-white p-6 rounded-lg shadow-xl text-center">
+                                <span class="text-5xl font-bold">→</span>
+                                <h3 class="text-2xl font-bold mt-2">Use an ArrayList</h3>
+                                <p class="mt-2 text-blue-100">
+                                    The general-purpose default. Great for application development where you can't predict user input.
+                                </p>
+                            </div>
+                        </div>
+                        
+                         <div class="md:col-span-2 decision-path mt-6">
+                            <div class="mb-4">
+                                <p class="font-semibold text-[#005F73] p-3 bg-blue-50 rounded-md">
+                                    I need to constantly add or remove elements from the BEGINNING or MIDDLE of the list.
+                                </p>
+                            </div>
+                            <div class="kpi-card text-white p-6 rounded-lg shadow-xl text-center">
+                                <span class="text-5xl font-bold">→</span>
+                                <h3 class="text-2xl font-bold mt-2">Use a Linked List</h3>
+                                <p class="mt-2 text-blue-100">
+                                    Ideal for specific algorithms and features like playlists, task queues, or maintaining edit histories.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white mt-12 py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500">
+            <p>&copy; 2025 ZaldisCode</p>
+        </div>
+    </footer>
+
+    <script>
+        const processLabel = (label) => {
+            if (label.length <= 16) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + ' ' + word).trim().length > 16) {
+                    lines.push(currentLine.trim());
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            });
+            if (currentLine) {
+                lines.push(currentLine.trim());
+            }
+            return lines;
+        };
+    
+        const ctx = document.getElementById('complexityChart').getContext('2d');
+        const complexityLevels = {
+            'O(1)': 1,
+            'O(log n)': 2,
+            'O(n)': 3,
+        };
+        const complexityLabels = Object.keys(complexityLevels);
+        
+        const chartData = {
+            labels: [
+                'Access by Index', 
+                'Search for Value', 
+                'Insertion (End)', 
+                processLabel('Insertion (Start/Middle)'),
+                'Deletion (End)',
+                processLabel('Deletion (Start/Middle)')
+            ],
+            datasets: [
+                {
+                    label: 'Array',
+                    data: [
+                        complexityLevels['O(1)'], 
+                        complexityLevels['O(n)'],
+                        null, 
+                        complexityLevels['O(n)'],
+                        null,
+                        complexityLevels['O(n)'],
+                    ],
+                    backgroundColor: '#0A9396',
+                    borderColor: '#005F73',
+                    borderWidth: 1
+                },
+                {
+                    label: 'ArrayList',
+                    data: [
+                        complexityLevels['O(1)'],
+                        complexityLevels['O(n)'],
+                        complexityLevels['O(1)'], 
+                        complexityLevels['O(n)'],
+                        complexityLevels['O(1)'],
+                        complexityLevels['O(n)'],
+                    ],
+                    backgroundColor: '#94D2BD',
+                    borderColor: '#0A9396',
+                    borderWidth: 1
+                },
+                {
+                    label: 'Linked List',
+                    data: [
+                        complexityLevels['O(n)'],
+                        complexityLevels['O(n)'],
+                        complexityLevels['O(1)'],
+                        complexityLevels['O(1)'],
+                        complexityLevels['O(n)'],
+                        complexityLevels['O(1)'],
+                    ],
+                    backgroundColor: '#E9D8A6',
+                    borderColor: '#CA6702',
+                    borderWidth: 1
+                }
+            ]
+        };
+
+        const complexityChart = new Chart(ctx, {
+            type: 'bar',
+            data: chartData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value, index, values) {
+                                return complexityLabels[value - 1] || '';
+                            },
+                            font: {
+                                weight: 'bold'
+                            }
+                        },
+                         grid: {
+                            color: '#e2e8f0'
+                        }
+                    },
+                     x: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            font: {
+                                size: 14
+                            }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                  return label.join(' ');
+                                } else {
+                                  return label;
+                                }
+                            },
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                const value = context.parsed.y;
+                                if (value !== null) {
+                                    label += complexityLabels[value - 1] || 'N/A';
+                                } else {
+                                     label += 'Not Applicable';
+                                }
+                                return label;
+                            }
+                        },
+                        backgroundColor: '#005F73',
+                        titleFont: {
+                            size: 16
+                        },
+                        bodyFont: {
+                            size: 14
+                        },
+                        padding: 12
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+
